@@ -95,8 +95,8 @@ module Rubygoal
 
     def initialize(game_window, coach_home, coach_away)
       @game_window = game_window
-
-      image_path = File.dirname(__FILE__) + '/../../media/background.png'
+      bg = ['bg-1.png', 'bg-2.png', 'bg-3.png', 'bg-4.png', 'bg-5.png', 'bg-6.png', 'bg-7.png'].sample(1).first
+      image_path = File.dirname(__FILE__) + "/../../media/#{bg}"
       @background_image = Gosu::Image.new(game_window, image_path, true)
 
       @ball = Ball.new(game_window, Field.center_position)
