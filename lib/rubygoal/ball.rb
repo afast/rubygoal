@@ -14,8 +14,7 @@ module Rubygoal
 
       @position = position
 
-      image_path = File.dirname(__FILE__) + '/../../media/ball.png'
-      @image = Gosu::Image.new(window, image_path, false)
+      @image = Gosu::Image.new(window, ball_design, false)
     end
 
     def goal?
@@ -58,6 +57,11 @@ module Rubygoal
     def decelerate
       velocity.x *= deceleration_coef
       velocity.y *= deceleration_coef
+    end
+
+    def ball_design
+      ball = "ball-#{rand(20)}.png"
+      File.dirname(__FILE__) + "/../../media/balls/#{ball}"
     end
 
     def deceleration_coef
